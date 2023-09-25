@@ -1,0 +1,26 @@
+﻿@{
+	ViewData["Title"] = "Index";
+}
+
+@if(ViewBag.msg != null)
+{
+    <script>alert("@ViewBag.msg");</script>
+}
+
+<center>
+	<h1>Broadcast Email to All Subscribers</h1>
+	<br /><hr /><br />
+	<br /><br />
+	<form asp-action="processBroadcastMessage" method="post" asp-controller="BroadcastMessage">
+		<h3>Subject Title: </h3>
+		<br /><br />
+		<textarea rows="2" cols="100" name="subjectTitle"></textarea>
+		<br /><br />
+		<h3>Broadcast Message: </h3>
+		<br /><br />
+		<textarea rows="5" cols="100" name="broadcastMessage"></textarea>
+		<br /><br />
+		<button type="submit" class="btn btn-primary">Send Broadcast Email</button>
+	</form>
+</center>
+

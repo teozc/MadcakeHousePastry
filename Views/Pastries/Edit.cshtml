@@ -1,0 +1,46 @@
+﻿@model MadcakeHousePastry.Models.Pastry
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Pastry</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PastryID" />
+            <div class="form-group">
+                <label asp-for="PastryName" class="control-label"></label>
+                <input asp-for="PastryName" class="form-control" />
+                <span asp-validation-for="PastryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PastryProducedDate" class="control-label"></label>
+                <input asp-for="PastryProducedDate" class="form-control" />
+                <span asp-validation-for="PastryProducedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PastryType" class="control-label"></label>
+                <input asp-for="PastryType" class="form-control" />
+                <span asp-validation-for="PastryType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PastryPrice" class="control-label"></label>
+                <input asp-for="PastryPrice" class="form-control" />
+                <span asp-validation-for="PastryPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

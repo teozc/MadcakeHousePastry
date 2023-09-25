@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MadcakeHousePastry.Models.Pastry>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<br />
+<hr />
+<h2>Search Pastry:</h2>
+<form>
+    <label>Enter Pastry Name:</label>
+    <input type ="text" name="SearchPastryName" />
+    &nbsp;&nbsp;&nbsp;
+    <br />
+
+    <label>Choose Pastry Type: </label>
+    @Html.DropDownList("PastryType", "All Pastry");
+    <input type="submit" name="submit" value="Search Pastry" />
+</form>
+<table class="table" border="1" style="text-align:center">
+    <thead>
+        <tr>
+            <th>
+                Pastry Name
+            </th>
+            <th>
+                Pastry Produced Data
+            </th>
+            <th>
+                Pastry Type
+            </th>
+            <th>
+                Pastry Price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PastryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PastryProducedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PastryType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PastryPrice)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PastryID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PastryID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PastryID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

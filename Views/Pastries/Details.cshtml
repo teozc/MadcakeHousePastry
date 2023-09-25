@@ -1,0 +1,42 @@
+﻿@model MadcakeHousePastry.Models.Pastry
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Pastry</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PastryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PastryName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PastryProducedDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PastryProducedDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PastryType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PastryType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PastryPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PastryPrice)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PastryID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
